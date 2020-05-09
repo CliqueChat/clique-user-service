@@ -1,3 +1,6 @@
+github.com/CliqueChat/clique-common-lib v0.0.0-20200412153405-fdf48e6d7ef4 h1:bjbLRLak2c7uyF76Du84hV+5KUH45y54Zmc4/G0ZrIE=
+github.com/CliqueChat/clique-common-lib v0.0.0-20200412153405-fdf48e6d7ef4/go.mod h1:p4581IFan4+grOSU9IbD193iy9uardGcKW6zqIMP+MY=
 github.com/gorilla/mux v1.7.4 h1:VuZ8uybHlWmqV03+zRzdwKL4tUnIp1MAQtp1mIFE1bc=
 github.com/gorilla/mux v1.7.4/go.mod h1:DVbg23sWSpFRCP0SfiEN6jmj59UnW/n46BH5rLB71So=
+github.com/magiconair/properties v1.8.1 h1:ZC2Vc7/ZFkGmsVC9KvOjumD+G5lXy2RtTKyzRKO2BQ4=
 github.com/magiconair/properties v1.8.1/go.mod h1:PppfXfuXeibc/6YijjN8zIbojt8czPbwD3XqdrwzmxQ=
