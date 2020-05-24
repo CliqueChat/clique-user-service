@@ -1,14 +1,15 @@
 package main
 
 import (
-	"github.com/CliqueChat/clique-common-lib/helpers"
-	"github.com/magiconair/properties"
+	"github.com/CliqueChat/clique-user-service/handlers"
+	"github.com/CliqueChat/clique-user-service/helpers"
+	"github.com/CliqueChat/clique-user-service/resources"
+	"github.com/gorilla/mux"
 	"log"
 	"net/http"
-	"os"
 )
 
-var prop = properties.MustLoadFile(os.Getenv("CLIQUE_CONFIG")+"/clique-user-service.properties", properties.UTF8)
+var prop = resources.GetApplicationProfile()
 
 func main() {
 
@@ -16,6 +17,15 @@ func main() {
 	host, _ := prop.Get(helpers.HOST)
 	port, _ := prop.Get(helpers.PORT)
 
-	log.Println("STARTING APPLICATION IN " + host + ":" + port)
-	log.Fatal(http.ListenAndServe(host+":"+port, nil))
+	// Setting up routes
+	r := setupRoutes()
+
+	log.Println("APPLICATION STARTED ON " + host + ":" + port)
+	log.Fatal(http.ListenAndServe(host+":"+port, r))
+}
+
+func setupRoutes() *mux.Router {
+	r := mux.NewRouter()
+	handlers.InitUserHandles(r)
+	return r
 }
