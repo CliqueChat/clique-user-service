@@ -1,7 +1,9 @@
 package helpers
 
 var (
-	HOST    = "host"
-	PORT    = "port"
-	TcpHost = "tcpPort"
+	HOST        = "host"
+	PORT        = "port"
+	TcpHost     = "tcpPort"
+	MongoURI    = "mongoURI"
+	MongoDBName = "mongoDBName"
 )
