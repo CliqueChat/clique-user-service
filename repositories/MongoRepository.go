@@ -13,26 +13,29 @@ var prop = resources.GetApplicationProfile()
 var mongoURI, _ = prop.Get(helpers.MongoURI)
 var mongoDBName, _ = prop.Get(helpers.MongoDBName)
 
-type MongoClient struct {
+type MongoRepository struct {
 	Client *mongo.Client
 	Ctx    context.Context
 }
 
-func (m *MongoClient) Connect() {
+var MongoRepo MongoRepository
+
+func Connect() {
 	ctx, _ := context.WithTimeout(context.Background(), 10*time.Second)
 	client, err := mongo.Connect(ctx, options.Client().ApplyURI(mongoURI))
 
 	if err != nil {
 		panic(err)
 	}
-	m.Client = client
-	m.Ctx = ctx
+
+	MongoRepo.Client = client
+	MongoRepo.Ctx = ctx
 }
 
-func (m *MongoClient) GetDatabase(dbName string) mongo.Database {
+func (m *MongoRepository) GetDatabase(dbName string) mongo.Database {
 	return *m.Client.Database(dbName)
 }
 
-func (m *MongoClient) GetCollection(colName string) mongo.Collection {
+func (m *MongoRepository) GetCollection(colName string) mongo.Collection {
 	return *m.Client.Database(mongoDBName).Collection(colName)
 }

@@ -6,4 +6,5 @@ var (
 	TcpHost     = "tcpPort"
 	MongoURI    = "mongoURI"
 	MongoDBName = "mongoDBName"
+	User        = "user"
 )
