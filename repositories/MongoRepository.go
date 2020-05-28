@@ -15,7 +15,6 @@ var mongoDBName, _ = prop.Get(helpers.MongoDBName)
 
 type MongoRepository struct {
 	Client *mongo.Client
-	Ctx    context.Context
 }
 
 var MongoRepo MongoRepository
@@ -29,7 +28,6 @@ func Connect() {
 	}
 
 	MongoRepo.Client = client
-	MongoRepo.Ctx = ctx
 }
 
 func (m *MongoRepository) GetDatabase(dbName string) mongo.Database {
