@@ -21,7 +21,7 @@ func GetApplicationProfile() *properties.Properties {
 		log.Println("APPLICATION STARTING IN LOCAL PROFILE")
 
 		wd, _ := os.Getwd()
-		propertyPath := filepath.Join([]string{wd, "clique-user-service", "resources", "application.properties"}...)
+		propertyPath := filepath.Join([]string{wd, "resources", "application.properties"}...)
 
 		return properties.MustLoadFile(propertyPath, properties.UTF8)
 	}

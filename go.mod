@@ -6,4 +6,6 @@ require (
 	github.com/CliqueChat/clique-common-lib v0.0.0-20200412153405-fdf48e6d7ef4
 	github.com/gorilla/mux v1.7.4
 	github.com/magiconair/properties v1.8.1
+	go.mongodb.org/mongo-driver v1.3.3
+	google.golang.org/genproto v0.0.0-20200521103424-e9a78aa275b7
 )
