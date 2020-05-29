@@ -5,6 +5,7 @@ import (
 	"github.com/CliqueChat/clique-user-service/helpers"
 	"github.com/CliqueChat/clique-user-service/repositories"
 	"github.com/CliqueChat/clique-user-service/resources"
+	"github.com/CliqueChat/clique-user-service/services"
 	"github.com/gorilla/mux"
 	"log"
 	"net/http"
@@ -20,6 +21,10 @@ func main() {
 
 	// Connecting MongoDb
 	repositories.Connect()
+
+	// Connecting Email Service
+	services.ConnectEmailServer()
+	services.TestSendMail([]string{"dr.amjad97@gmail.com"}, "This is a test email")
 
 	// Setting up routes
 	r := setupRoutes()

@@ -32,7 +32,7 @@ func createUser(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	//TODO Return success status
+	// TODO Return success status
 
 }
 
