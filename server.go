@@ -11,7 +11,7 @@ import (
 	"net/http"
 )
 
-var prop = resources.GetApplicationProfile()
+var prop, profile = resources.GetApplicationProfile()
 
 func main() {
 
@@ -24,12 +24,13 @@ func main() {
 
 	// Connecting Email Service
 	services.ConnectEmailServer()
-	services.TestSendMail([]string{"dr.amjad97@gmail.com"}, "This is a test email")
 
 	// Setting up routes
 	r := setupRoutes()
 
+	log.Println("APPLICATION STARTING IN " + profile + " PROFILE")
 	log.Println("APPLICATION STARTED ON " + host + ":" + port)
+
 	log.Fatal(http.ListenAndServe(host+":"+port, r))
 }
 

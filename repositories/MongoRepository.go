@@ -9,7 +9,7 @@ import (
 	"time"
 )
 
-var prop = resources.GetApplicationProfile()
+var prop, _ = resources.GetApplicationProfile()
 var mongoURI, _ = prop.Get(helpers.MongoURI)
 var mongoDBName, _ = prop.Get(helpers.MongoDBName)
 

@@ -5,13 +5,13 @@ import (
 	"github.com/CliqueChat/clique-user-service/helpers"
 	"github.com/CliqueChat/clique-user-service/repositories"
 	"github.com/CliqueChat/clique-user-service/structs"
-	"github.com/CliqueChat/clique-user-service/validators"
+	"github.com/CliqueChat/clique-user-service/utils"
 	"time"
 )
 
 func CreateANewUser(user structs.User) error {
 
-	error := validators.ValidateUserCreationRequest(user)
+	error := utils.ValidateUserCreationRequest(user)
 
 	if error != nil {
 		//TODO Handle error situation
